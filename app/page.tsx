@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useMemo, useState } from "react";
@@ -13,23 +14,16 @@ import "./globals.css";
 const brand = {
   name: "assyrianMOTM",
   tagline: "Precision • Speed • Headshots",
-  colors: {
-    primary: "from-blue-600 to-blue-400",
-    accent: "from-red-600 to-red-400",
-  },
+  colors: { primary: "from-blue-600 to-blue-400", accent: "from-red-600 to-red-400" },
   logoUrl: "/logo.jpg",
   email: "business@assyrianmotm.gg",
-  socials: {
-    youtube: "https://youtube.com/@assyrianmotm",
-    twitch: "https://twitch.tv/assyrianmotm",
-    twitter: "https://x.com/assyrianmotm",
-  },
+  socials: { youtube: "https://youtube.com/@assyrianmotm", twitch: "https://twitch.tv/assyrianmotm", twitter: "https://x.com/assyrianmotm" },
 };
 
 const clips = [
-  { title: "Crisp Headshot — CS2", id: "v2pi1Jn7UAQ", type: "short" },
-  { title: "Clean 4K — Highlights", id: "AgSJ1FFOlcA", type: "video" },
-  { title: "Silky Flick — One Tap", id: "HDwl_6mqhaA", type: "video" },
+  { title: "Crisp Headshot — CS2", id: "v2pi1Jn7UAQ" },
+  { title: "Clean 4K — Highlights", id: "AgSJ1FFOlcA" },
+  { title: "Silky Flick — One Tap", id: "HDwl_6mqhaA" },
 ] as const;
 
 function YouTubeEmbed({ id }: { id: string }) {
@@ -93,7 +87,7 @@ export default function Page() {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    const body = encodeURIComponent(`${form.message}\\n\\n— ${form.name} (${form.email})`);
     window.location.href = `mailto:business@assyrianmotm.gg?subject=Creator%20Inquiry%20—%20assyrianMOTM&body=${body}`;
     setSubmitted(true);
   };
@@ -114,7 +108,7 @@ export default function Page() {
                   <GradientText>{brand.name}</GradientText>
                 </h1>
                 <p className="mt-3 max-w-2xl text-lg text-zinc-300">
-                  High‑impact Counter‑Strike highlights with <span className="font-semibold">precision headshots</span>, clean edits, and an Assyrian identity.
+                  High-impact Counter-Strike highlights with <span className="font-semibold">precision headshots</span>, clean edits, and an Assyrian identity.
                   Daily clips. Real skill. <span className="text-zinc-100">MOTM mentality.</span>
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
@@ -150,7 +144,7 @@ export default function Page() {
       <section className="border-y border-zinc-800 bg-zinc-950/40">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-6 py-10 md:grid-cols-3">
           {[
-            { icon: Target, title: "Aim Discipline", desc: "Daily routines • VOD review • One‑tap focus" },
+            { icon: Target, title: "Aim Discipline", desc: "Daily routines • VOD review • One-tap focus" },
             { icon: Crown, title: "Creator Identity", desc: "Assyrian roots • Clean design • Consistent brand" },
             { icon: ShieldCheck, title: "Sponsor Ready", desc: "Media kit • Posting cadence • Clear value" },
           ].map((item, idx) => (
@@ -166,7 +160,7 @@ export default function Page() {
         <div className="mb-8 flex items-end justify-between">
           <div>
             <h2 className="text-3xl font-bold"><GradientText>Highlights</GradientText></h2>
-            <p className="mt-2 text-zinc-400">Quick, clean, sponsor‑friendly edits — optimized for Shorts and Reels.</p>
+            <p className="mt-2 text-zinc-400">Quick, clean, sponsor-friendly edits — optimized for Shorts and Reels.</p>
           </div>
           <a href={brand.socials.youtube} target="_blank" rel="noreferrer" className="hidden md:block">
             <Button className="rounded-2xl"><Youtube className="mr-2 h-5 w-5" /> See More</Button>
@@ -214,16 +208,16 @@ export default function Page() {
       </section>
 
       <section id="sponsors" className="mx-auto max-w-7xl px-6 py-14">
-        <div className="mb-8 flex items-center gap-3"><Sparkles className="h-5 w-5" /><h2 className="text-2xl font-bold tracking-tight">Sponsor‑Ready Pitch</h2></div>
+        <div className="mb-8 flex items-center gap-3"><Sparkles className="h-5 w-5" /><h2 className="text-2xl font-bold tracking-tight">Sponsor-Ready Pitch</h2></div>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <Card className="border-zinc-800 bg-zinc-900/60">
             <CardHeader><CardTitle>Why {brand.name}?</CardTitle></CardHeader>
             <CardContent className="space-y-3 text-zinc-300">
-              <p>High‑impact CS2 highlights with clean, modern edits and a unique cultural identity. The content is family‑friendly, brand‑safe, and built for Shorts/Vertical distribution.</p>
+              <p>High-impact CS2 highlights with clean, modern edits and a unique cultural identity. The content is family-friendly, brand-safe, and built for Shorts/Vertical distribution.</p>
               <ul className="list-inside list-disc space-y-1">
                 <li>Daily posting cadence across YouTube, TikTok, and Reels</li>
-                <li>Signature look: high contrast, slow‑mo impact frame, logo watermark</li>
-                <li>Clear value: precision headshots, fast time‑to‑action, strong retention</li>
+                <li>Signature look: high contrast, slow-mo impact frame, logo watermark</li>
+                <li>Clear value: precision headshots, fast time-to-action, strong retention</li>
               </ul>
               <div className="pt-2 text-sm text-zinc-400">Media Kit available on request.</div>
             </CardContent>
@@ -233,7 +227,7 @@ export default function Page() {
             <CardContent>
               <div className="rounded-xl bg-black/50 p-4 text-sm leading-relaxed text-zinc-300">
                 <p className="font-semibold">Subject: Creator Partnership — {brand.name}</p>
-                <p className="mt-2">Hi Team, I’m {brand.name}. I create high‑impact Counter‑Strike highlights with precise headshots and clean edits. I’d love to collaborate via affiliate codes, product testing, or creator partnerships.</p>
+                <p className="mt-2">Hi Team, I’m {brand.name}. I create high-impact Counter-Strike highlights with precise headshots and clean edits. I’d love to collaborate via affiliate codes, product testing, or creator partnerships.</p>
                 <p className="mt-2">Recent clips: YouTube Shorts + Reels (links on site). Happy to share analytics.</p>
                 <p className="mt-2">Thanks for your time — looking forward to connecting.</p>
                 <p className="mt-2">— {brand.name}</p>
@@ -249,13 +243,12 @@ export default function Page() {
 
       <section id="about" className="border-y border-zinc-800 bg-zinc-950/40">
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold"><GradientText>About</GradientText></h2>
-            <p className="mt-2 max-w-3xl text-zinc-300">CS2 Headshot Machine ⚡ Precision • Speed • {brand.name}. High‑impact Counter‑Strike highlights with clean edits, cinematic kills, and Assyrian identity. Daily uploads — welcome to the MOTM mentality.</p>
+          <div className="mb-8"><h2 className="text-2xl font-bold"><GradientText>About</GradientText></h2>
+            <p className="mt-2 max-w-3xl text-zinc-300">CS2 Headshot Machine ⚡ Precision • Speed • {brand.name}. High-impact Counter-Strike highlights with clean edits, cinematic kills, and Assyrian identity. Daily uploads — welcome to the MOTM mentality.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <Card className="border-zinc-800 bg-zinc-900/60"><CardHeader><CardTitle>Content Pillars</CardTitle></CardHeader><CardContent><ul className="list-inside list-disc text-zinc-300"><li>CS2 Highlights</li><li>Gameplay Breakdowns & Tips</li><li>Cinematic Showcase Edits</li></ul></CardContent></Card>
-            <Card className="border-zinc-800 bg-zinc-900/60"><CardHeader><CardTitle>Signature Style</CardTitle></CardHeader><CardContent><ul className="list-inside list-disc text-zinc-300"><li>Instant first frame: show the kill</li><li>Slow‑mo impact on headshot</li><li>High contrast + glow on crosshair</li></ul></CardContent></Card>
+            <Card className="border-zinc-800 bg-zinc-900/60"><CardHeader><CardTitle>Signature Style</CardTitle></CardHeader><CardContent><ul className="list-inside list-disc text-zinc-300"><li>Instant first frame: show the kill</li><li>Slow-mo impact on headshot</li><li>High contrast + glow on crosshair</li></ul></CardContent></Card>
             <Card className="border-zinc-800 bg-zinc-900/60"><CardHeader><CardTitle>Hashtags</CardTitle></CardHeader><CardContent><div className="rounded-xl bg-black/50 p-3 text-sm text-zinc-300">#CS2 #CounterStrike #CSGO #Gaming #Headshot #Flick #FPS #{brand.name}</div></CardContent></Card>
           </div>
         </div>
